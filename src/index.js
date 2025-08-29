@@ -1,16 +1,24 @@
 import dotenv from "dotenv"
+import express from "express";
 
 dotenv.config({
   path : "./.env"
 
 });
 
+const app = express()
+const port = process.env.PORT || 3000;4500
 
-let userName = process.env.Name
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-console.log(userName);
+app.get('/Adi', (req, res) => {
+  res.send("Aditya is best coder")
 
+})
 
-
-console.log("Backend Project set");
+app.listen(port, () => {
+  console.log(`Example app listening on port http://localhost:${port}`)
+})
 
