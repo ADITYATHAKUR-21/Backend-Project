@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import healthCheackRouter from "./routes/healthCheack.route.js"
 
 
 const app = express();
@@ -17,6 +18,10 @@ app.use(cors({
   methods: ("GET", "POST", "PUT", "PATCH", "OPTIONS", "DELETE"),
   allowedHeaders: ("Content_Type", "Authorization")
 }))
+
+app.use("/api/v1/healthCheack", healthCheackRouter )
+
+
 
 app.get('/', (req, res) => {
   res.send('Hello Basecampy')

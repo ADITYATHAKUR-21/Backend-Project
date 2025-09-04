@@ -19,7 +19,7 @@ connectDB()
 
 })
 .catch((err) => {
-  console.log("Mongodb connection error");
+  console.log("Mongodb connection error",);
   process.exit(1)
 
 })
